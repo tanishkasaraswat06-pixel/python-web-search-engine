@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MySearch</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        <span class="logo-my">My</span>
+        <span class="logo-search">Search</span>
+
+    </div>
+
+</header>
+
+
+<!-- SEARCH AREA -->
+
+<main>
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search the web..."
+            autocomplete="off"
+        >
+
+        <button id="searchButton">
+
+            🔍
+
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH TABS -->
+
+    <div class="tabs">
+
+        <button
+            class="tab active"
+            data-mode="all">
+
+            All
+
+        </button>
+
+        <button
+            class="tab"
+            data-mode="web">
+
+            Web
+
+        </button>
+
+        <button
+            class="tab"
+            data-mode="images">
+
+            Images
+
+        </button>
+
+        <button
+            class="tab"
+            data-mode="wikipedia">
+
+            Wikipedia
+
+        </button>
+
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div id="loading">
+
+        Searching...
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div id="results"></div>
+
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+
+</html>
