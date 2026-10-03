@@ -1,0 +1,5 @@
+Flask
+serpapi
+python-dotenv
+requests
+wikipedia
