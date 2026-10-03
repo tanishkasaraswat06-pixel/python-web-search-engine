@@ -1,0 +1,597 @@
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    color: #202124;
+
+    background:
+        radial-gradient(circle at top left, #eef4ff 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #f4edff 0%, transparent 35%),
+        #ffffff;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    width: 100%;
+    padding: 25px 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo-my {
+    color: #4285f4;
+}
+
+.logo-search {
+    color: #202124;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+main {
+    width: 92%;
+    max-width: 1050px;
+    margin: 60px auto;
+}
+
+
+/* ================================
+   SEARCH INTRO
+================================ */
+
+main::before {
+    content: "Search the web with MySearch";
+    display: block;
+
+    text-align: center;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    margin-bottom: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #4285f4,
+        #7b61ff,
+        #e942f5
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ================================
+   SEARCH BAR
+================================ */
+
+.search-container {
+    width: 100%;
+    max-width: 800px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    background: white;
+
+    border: 1px solid #dfe1e5;
+
+    border-radius: 40px;
+
+    padding: 5px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition: 0.25s;
+}
+
+.search-container:hover {
+    box-shadow:
+        0 6px 22px rgba(66, 133, 244, 0.15);
+}
+
+.search-container:focus-within {
+    border-color: #8ab4f8;
+
+    box-shadow:
+        0 6px 25px rgba(66, 133, 244, 0.18);
+}
+
+
+.search-container input {
+    flex: 1;
+
+    padding: 16px 22px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 17px;
+
+    color: #202124;
+}
+
+
+.search-container input::placeholder {
+    color: #9aa0a6;
+}
+
+
+.search-container button {
+    width: 52px;
+    height: 52px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #4285f4,
+        #6c63ff
+    );
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.search-container button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 15px rgba(66, 133, 244, 0.3);
+}
+
+
+/* ================================
+   TABS
+================================ */
+
+.tabs {
+    max-width: 800px;
+
+    margin: 25px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.tab {
+    border: 1px solid #e1e5ea;
+
+    background: white;
+
+    padding: 10px 22px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    color: #5f6368;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.tab:hover {
+    background: #f1f5ff;
+
+    color: #4285f4;
+
+    border-color: #c8d8ff;
+}
+
+
+.tab.active {
+    background: #4285f4;
+
+    color: white;
+
+    border-color: #4285f4;
+
+    box-shadow:
+        0 4px 12px rgba(66, 133, 244, 0.25);
+}
+
+
+/* ================================
+   LOADING
+================================ */
+
+#loading {
+    display: none;
+
+    margin: 35px auto;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   RESULTS
+================================ */
+
+#results {
+    margin-top: 40px;
+}
+
+
+/* ================================
+   AI ANSWER
+================================ */
+
+.ai-box {
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f9ff,
+            #fdf9ff
+        );
+
+    border: 1px solid #e1e6ff;
+
+    box-shadow:
+        0 5px 20px rgba(60, 80, 150, 0.08);
+}
+
+
+.ai-title {
+    font-size: 21px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+    color: #333;
+}
+
+
+.ai-text {
+    color: #555;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   SECTION HEADINGS
+================================ */
+
+#results h2 {
+    font-size: 22px;
+
+    margin-bottom: 20px;
+
+    color: #202124;
+}
+
+
+/* ================================
+   WEB RESULT
+================================ */
+
+.result {
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background: white;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 15px;
+
+    transition: 0.25s;
+}
+
+
+.result:hover {
+    transform: translateY(-2px);
+
+    border-color: #d7e3ff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+.result-title {
+    font-size: 19px;
+
+    color: #1a73e8;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.result-title:hover {
+    text-decoration: underline;
+}
+
+
+.result-url {
+    margin-top: 7px;
+
+    color: #188038;
+
+    font-size: 13px;
+
+    word-break: break-all;
+}
+
+
+.result-snippet {
+    margin-top: 9px;
+
+    color: #5f6368;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   IMAGE GRID
+================================ */
+
+.image-grid {
+    margin-top: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.image-card {
+    display: block;
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    text-decoration: none;
+
+    color: #333;
+
+    transition: 0.25s;
+}
+
+
+.image-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+    border-color: #cddcff;
+}
+
+
+.image-card img {
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.image-info {
+    padding: 12px;
+
+    font-size: 13px;
+
+    color: #555;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ================================
+   WIKIPEDIA
+================================ */
+
+.wiki-card {
+    margin-top: 15px;
+
+    padding: 22px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    transition: 0.25s;
+}
+
+
+.wiki-card:hover {
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transform: translateY(-2px);
+}
+
+
+.wiki-title {
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #3366cc;
+
+    margin-bottom: 10px;
+}
+
+
+.wiki-summary {
+    color: #555;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+.wiki-link {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    color: #3366cc;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.wiki-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   EMPTY MESSAGE
+================================ */
+
+.empty {
+    margin-top: 40px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 15px;
+
+    color: #777;
+
+    border: 1px solid #eeeeee;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px;
+    }
+
+    main {
+        width: 94%;
+
+        margin-top: 40px;
+    }
+
+    main::before {
+        font-size: 28px;
+    }
+
+    .image-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    main::before {
+        font-size: 24px;
+    }
+
+    .tabs {
+        gap: 5px;
+    }
+
+    .tab {
+        padding: 8px 13px;
+    }
+
+    .image-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .image-card img {
+        height: 140px;
+    }
+
+}
